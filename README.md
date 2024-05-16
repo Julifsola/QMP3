@@ -1,4 +1,5 @@
-# java-base-project
+# QMP3
+https://docs.google.com/document/d/1XGb_Xt2v3viZY4RNky6zguL-ATv1iqEzHWhK4a6vsIk/edit#heading=h.uyku9mnteh0t
 
 Esta es una plantilla de proyecto diseñada para: 
 
