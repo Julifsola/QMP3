@@ -8,7 +8,16 @@ public class CrearPrenda {
   private ColorPrenda colorSecundario;
   private Trama trama = Trama.LISA;
 
-  public Prenda CrearPrenda(){
+  public CrearPrenda(TipoPrenda unTipo){
+    this.tipo = unTipo;
+    this.categoria = null;
+    this.material = null;
+    this.colorSecundario = null;
+    this.colorPrimario = null;
+    this.trama = null;
+  }
+
+  public Prenda ValidarYCrear(){
     return new Prenda(categoria, tipo, material, colorPrimario, colorSecundario, trama);
   }
 
@@ -27,7 +36,7 @@ public class CrearPrenda {
       throw new ExcepcionPrendaInvalida("El material no debe estar vacio");
     }
     if (!this.tipo.EsMaterialConsistente(unMaterial)){
-      throw new ExcepcionPrendaInvalida("El material se consiste con el tipo de prenda");
+      throw new ExcepcionPrendaInvalida("El material no consiste con el tipo de prenda");
     }
     this.material = unMaterial;
   }
