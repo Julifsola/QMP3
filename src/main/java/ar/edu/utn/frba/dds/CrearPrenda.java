@@ -1,5 +1,7 @@
 package ar.edu.utn.frba.dds;
 
+import java.text.Normalizer;
+
 public class CrearPrenda {
   private TipoPrenda tipo;
   private Categoria categoria;
@@ -7,6 +9,7 @@ public class CrearPrenda {
   private ColorPrenda colorPrimario;
   private ColorPrenda colorSecundario;
   private Trama trama = Trama.LISA;
+  private Formalidad formalidad;
 
   public CrearPrenda(TipoPrenda unTipo){
     this.tipo = unTipo;
@@ -15,10 +18,11 @@ public class CrearPrenda {
     this.colorSecundario = null;
     this.colorPrimario = null;
     this.trama = null;
+    this.formalidad = null;
   }
 
   public Prenda ValidarYCrear(){
-    return new Prenda(categoria, tipo, material, colorPrimario, colorSecundario, trama);
+    return new Prenda(categoria, tipo, material, colorPrimario, colorSecundario, trama, formalidad);
   }
 
   public void setTipoPrenda(TipoPrenda unTipo){
@@ -60,6 +64,14 @@ public class CrearPrenda {
       throw new ExcepcionPrendaInvalida("La trama no debe estar vacia");
     }
     this.trama = unaTrama;
+  }
+
+  public void setFormalidad(Formalidad unaFormalidad) {
+    checkearTipoPenda();
+    if (unaFormalidad == null) {
+      throw new ExcepcionPrendaInvalida("Se debe indicar la formalidad de la prenda");
+    }
+    this.formalidad = unaFormalidad;
   }
 
 

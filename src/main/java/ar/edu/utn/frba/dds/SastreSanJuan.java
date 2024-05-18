@@ -1,6 +1,4 @@
-package ar.edu.utn.frba.dds.Uniforme;
-
-import ar.edu.utn.frba.dds.*;
+package ar.edu.utn.frba.dds;
 
 public class SastreSanJuan implements  Sastre{
   public Prenda fabricarParteSuperior(){

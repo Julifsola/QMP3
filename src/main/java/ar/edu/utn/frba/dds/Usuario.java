@@ -20,7 +20,7 @@ public class Usuario {
     this.motorSugerencias = motor;
   }
 
-  public List<Guardarropas> generarSugerencias(){
+  public List<Sugerencia> generarSugerencias(){
     return this.motorSugerencias.generarSugerencias(this);
   }
 }
