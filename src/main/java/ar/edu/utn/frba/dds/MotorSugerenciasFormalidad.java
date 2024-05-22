@@ -1,5 +1,6 @@
 package ar.edu.utn.frba.dds;
 
+import com.google.common.collect.Lists;
 import java.util.List;
 
 
@@ -18,7 +19,7 @@ public class MotorSugerenciasFormalidad implements  MotorSugerencias{
     //Uso una biblioteca como Guava para el producto cartesiano
     List<List<Prenda>> combinaciones = Lists.cartesianProduct(prendasSuperiores, prendasInferiores, calzados);
 
-    return combinaciones.map(c -> new Sugerencia(c[0], c[1], c[2]))
+    return combinaciones.stream().map(c -> new Sugerencia(c.get(0), c.get(1), c.get(2))).toList();
   }
 
 }
